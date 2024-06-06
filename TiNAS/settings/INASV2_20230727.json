@@ -1,0 +1,33 @@
+{
+    "GLOBAL_SETTINGS": {
+        "EXP_SUFFIX": "INASV2_20230727"
+    },
+    "PLATFORM_SETTINGS": {
+        "IMC_CONSTRAINT": 0
+    },
+    "NAS_SSOPTIMIZER_SETTINGS": {
+        "SSOPT_POLICY": "FLOPS",
+        "SSOPT_CONSTRAINTS": "CHK_PASS_STORAGE,CHK_PASS_SPATIAL,CHK_PASS_ATOMICITY,CHK_PASS_RESPONSIVENESS",
+        "VALID_SUBNETS_THRESHOLD": 0.1
+    },
+    "NAS_EVOSEARCH_SETTINGS": {
+        "EVOSEARCH_SCORE_TYPE": "ACC_IMC"
+    },
+    "INASV2": {
+        "STAGE1_SETTINGS": {
+            "DROPPING_BLOCK_LEVEL": {
+                "MOBILENET_NUM_LAYERS_EXPLICIT": [1],
+                "SUPPORT_SKIP": [false]
+            },
+            "DROPPING_NET_LEVEL": {
+                "WIDTH_MULTIPLIER": [0.2, 0.3, 0.4, 0.5],
+                "INPUT_RESOLUTION": []
+            }
+        },
+        "STAGE2_SETTINGS": {
+            "BLOCK_SEARCH_SPACE": "dropped",
+            "MUTATION_OPERATOR": "mutate_blockwise_prob",
+            "MUT_PROB_PER_BLOCK": [0.2, 0.2, 0.1, 0.1]
+        }
+    }
+}
