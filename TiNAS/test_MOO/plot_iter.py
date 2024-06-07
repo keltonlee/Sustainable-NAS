@@ -24,3 +24,4 @@ ax.set_ylabel('Carbon Footprint')
 ax.legend()
 
 plt.show()
+print('hello')
